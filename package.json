@@ -15,7 +15,7 @@
     "preversion": "npm run lint",
     "version": "npm run format && git add -A src",
     "postversion": "git push && git push --tags",
-    "debug": "npm run build && node ./lib/index.js"
+    "debug": "npm run build && node --trace-warnings --experimental-modules --es-module-specifier-resolution=node ./lib/debug.js"
   },
   "repository": {
     "type": "git",
@@ -44,7 +44,7 @@
   "dependencies": {
     "is-running-process": "^1.0.0",
     "lodash": "^4.17.21",
-    "proxy-extract": "^1.0.2",
+    "proxy-extract": "^1.0.3",
     "time-helpers": "^1.0.0"
   }
 }
