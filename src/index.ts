@@ -11,12 +11,18 @@ class ProxyObservator {
     }
 
     clearTimeout(ProxyObservator.timerId)
-    ProxyObservator.timerId = setTimeout(async () => await this.refresh(), refreshTimeout)
+    ProxyObservator.timerId = setTimeout(async () => await ProxyObservator.refresh(), refreshTimeout)
+
+    return ProxyObservator.timerId
   }
 
   static async stop() {
     clearTimeout(ProxyObservator.timerId)
     ProxyObservator.proxies = []
+  }
+
+  static getAll() {
+    return ProxyObservator.proxies
   }
 
   static getRandom() {
