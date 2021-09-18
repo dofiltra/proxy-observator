@@ -1,0 +1,50 @@
+{
+  "name": "package_name",
+  "version": "1.0.1",
+  "description": "",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"jest --config jestconfig.json\"",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepublishOnly": "npm test && npm run lint",
+    "prepare": "npm run build",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags",
+    "debug": "npm run build && node ./lib/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ty4ka/package_name.git"
+  },
+  "keywords": [
+    "proccess"
+  ],
+  "author": "Dmitrii Osipovich",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ty4ka/package_name/issues"
+  },
+  "homepage": "https://github.com/Ty4ka/package_name#readme",
+  "devDependencies": {
+    "@types/lodash": "^4.14.173",
+    "@types/node": "^16.9.2",
+    "prettier": "^2.4.1",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.4.3"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "dependencies": {
+    "is-running-process": "^1.0.0",
+    "lodash": "^4.17.21",
+    "proxy-extract": "^1.0.2",
+    "time-helpers": "^1.0.0"
+  }
+}
