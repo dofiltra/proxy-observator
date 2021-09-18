@@ -6,12 +6,12 @@ class ProxyObservator {
   private static timerId: NodeJS.Timeout
 
   static async start(count = 10, tryLimit = 1, refreshTimeout?: number) {
-    console.log('refresh')
+    // console.log('refresh')
     const newProxies = await extractProxy({
       count,
       tryLimit
     })
-    console.log('refresh', newProxies?.length)
+    // console.log('refresh', newProxies?.length)
     ProxyObservator.proxies = newProxies?.length ? newProxies : []
 
     if (refreshTimeout) {
