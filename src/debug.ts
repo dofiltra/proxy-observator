@@ -6,7 +6,7 @@ const startDebug = async () => {
 
   while (true) {
     await sleep(5e3)
-    console.log(ProxyObservator.getAll())
+    // console.log(ProxyObservator.getAll())
   }
 }
 startDebug()
